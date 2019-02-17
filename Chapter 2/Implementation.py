@@ -1,6 +1,5 @@
 # From Geekforgeeks linkedlist implementation
 
-
 class Node:
 
     def __init__(self, data):
@@ -25,7 +24,7 @@ class LinkedList:
         self.head = newHead
 
     def addAfter(self, prevNode, data):
-        if prevNode is None:
+        if prevNode == None:
             return
 
         newNode = Node(data)
@@ -63,29 +62,8 @@ class LinkedList:
         temp = None
 
 
-def removeDups(lst):
-    if lst == None:
-        return
+lst = LinkedList()
+lst.head = Node(0)
 
-    temp = lst.head
-    prev = None
-    tracker = []
-
-    while temp:
-        if temp.data in tracker:
-            prev.next = temp.next
-        else:
-            tracker.append(temp.data)
-            prev = temp
-        temp = temp.next
-
-    return lst
-
-
-# lst = LinkedList()
-# lst.head = Node(0)
-
-# for i in range(10):
-#     lst.addTail(i)
-
-# lst.printLst()
+for i in range(1, 10):
+    lst.addTail(i)
