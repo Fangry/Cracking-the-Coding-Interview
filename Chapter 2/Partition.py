@@ -20,14 +20,14 @@ def partition(lst, x):
     while node:
         if node.data < x:
             if small_head:
-                small_tail.next, small_tail = node, node
+                small_tail.next, small_tail = node, node 
             else:
-                small_head, small_tail = node, node
+                small_head, small_tail = node, node # fill in first node
         else:
             if big_head:
                 big_tail.next, big_tail = node, node
             else:
-                big_head, big_tail = node, node
+                big_head, big_tail = node, node # fill in firsrt node
         node = node.next
 
     small_tail.next = big_head  # connect two linked lists together

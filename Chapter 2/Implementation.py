@@ -60,7 +60,7 @@ class LinkedList:
             return
         prev.next = temp.next
         temp = None
-
+        
 
 lst = LinkedList()
 lst.head = Node(0)
