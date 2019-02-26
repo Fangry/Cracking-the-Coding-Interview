@@ -1,5 +1,6 @@
 # From Geekforgeeks linkedlist implementation
 
+
 class Node:
 
     def __init__(self, data):
@@ -11,6 +12,14 @@ class LinkedList:
 
     def __init__(self):
         self.head = None
+
+    def findLength(self):
+        temp = self.head
+        count = 0
+        while(temp):
+            count += 1
+            temp = temp.next
+        return count
 
     def printLst(self):
         temp = self.head
@@ -60,10 +69,29 @@ class LinkedList:
             return
         prev.next = temp.next
         temp = None
-        
+
+    def does_exist(self, x):
+        temp = self.head
+        while temp:
+            if temp.data == x:
+                return True
+            temp = temp.next
+        return False
+
+    def get_nth(self, n):
+        temp = self.head
+        count = 0
+        while temp:
+            if count == n:
+                return temp.data
+            count += 1
+            temp = temp.next
+        assert(False) # nth element doesn't exist
+        return 0
 
 lst = LinkedList()
-lst.head = Node(0)
-
-for i in range(1, 10):
+for i in range(10):
     lst.addTail(i)
+lst.printLst()
+
+
